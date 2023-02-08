@@ -3,11 +3,11 @@ const path = require('path')
 const bodyParser = require('body-parser');
 const adminData = require('./routes/admin');
 const shopRouter = require('./routes/shop');
-
+const expressHbs = require('express-handlebars')
 
 const app = express();
-
-app.set('view engine' , 'pug');
+app.engine('handlebars' , expressHbs());
+app.set('view engine' , 'handlebars');
 app.set('views' , 'views')
 
 
@@ -26,6 +26,11 @@ app.use((req , res , next)=>{
     next();
 })
 
+app.get('/handlebars' , (req , res)=>{
+
+
+    
+})
 
 
 
