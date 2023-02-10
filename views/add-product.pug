@@ -7,7 +7,17 @@ block content
         main 
             form.product-form(action="/admin/add-product" , method="POST")
                 .form-control
-                    label(for="title") Title 
+                    label(for="title") Title: 
                     input(type="text" , name="title")#title
+                    br
+                    label(for="description") Description:  
+                    input(type="text" , name="description")#description
+                    br
+                    label(for="imageUrl") Image Url 
+         
+                    input(type="text" name="imageUrl")#imageUrl
+                    br
+                    label(for="price") Price: 
+                    input(type="text" name="price")#price  
                 button.btn(type="submit") Add Product 
 

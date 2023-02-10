@@ -23,12 +23,18 @@ html(lang="en")
                             header.card__header 
                                 h1.prodcut__title #{product.title}
                             .card__image 
-                                img(src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSERWxlKeLX4iwIUWSTaHIq-ZSdhpcW7g-4MA&usqp=CAU", alt="book")
+                                img(src=product.imageUrl, width="150px" , height="150px" ,alt="book")
                             .card__content 
-                                h2.product__price $19.99
-                                p.product__description A very interseting book about so many even more 
+                                h2.product__price #{product.price}$
+                                p.product__description #{product.description}
                             .card__actions
-                                button.btn Add to Cart
+                                a(href=`\\products\\`+product.id) Details | #{product.id}
+                                br
+                                a(href=`/admin/edit-product/`+product.id) Edit
+                                form(action="/add-to-cart" method="GET") 
+                                    button.btn Add to Cart
+                                    
+
             else
                 h1 No Products
 
