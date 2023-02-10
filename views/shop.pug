@@ -2,11 +2,11 @@ doctype html
 html(lang="en")
     head
         meta(charset="UTF-8")
-        meta(http-equiv="X-UA-Compatible", content="IE=edge")
-        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible" content="IE=edge")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
         title My Shop
-        link(rel="stylesheet", href="/css/main.css")
-        link(rel="stylesheet", href="/css/product.css")
+        link(rel="stylesheet" href="/css/main.css")
+        link(rel="stylesheet" href="/css/product.css")
     body
         header.main-header
             nav.main-header__nav 
@@ -33,7 +33,11 @@ html(lang="en")
                                 a(href=`/admin/edit-product/`+product.id) Edit
                                 form(action="/add-to-cart" method="GET") 
                                     button.btn Add to Cart
-                                    
+
+                                form(action="/admin/delete-product" , method="POST")
+                                    input(type="hidden" value=product.id , name="id")
+                                    button(type="submit" class="btn") Delete  
+
 
             else
                 h1 No Products
